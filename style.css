@@ -1,0 +1,313 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+*{margin: 0;padding: 0;}
+
+html,body{font-size: 12px;
+color: #111; font-family: 'Noto Sans KR', sans-serif;}
+h1,h2,h3,h4,h5,h6,h6{font-size: 100%;}
+ol,ul{list-style: none;}
+a{text-decoration: none; color: inherit;}
+img{vertical-align: bottom;}
+address{font-style: normal;}
+table{border-collapse: collapse;}
+botton{border: none;
+background: transparent;}
+
+
+#wrap{
+	width: 100%;
+	min-width: 1100px;
+/*L .align의 크기와 동일하게 설정하여,
+	.align의 가로 크기까지는 내부 컨텐츠 배열을 유지시키도록 한다.(=보호장치)
+*/
+
+}
+.align{
+	width: 1100px;
+	margin: auto;
+	
+}
+
+header{
+	overflow: hidden;
+	padding: 1rem 0;
+	height: 60px;
+	
+	
+}
+
+#logo{
+	float: left;
+	
+}
+	
+#logo h1{}
+#logo h1 a{}
+#logo h1 a img{}
+
+nav{
+	float: right;
+	
+}
+nav div{
+	float: left;
+	margin-left: 4rem;
+	transition: 0.3s;
+	color: #767676;
+		
+}
+nav div a{
+	display: block;
+	font-size: 1.4rem;
+	font-weight: bold;
+	line-height: 50px;
+	
+}
+
+nav div:hover{
+	color: #363636;
+}
+
+main{
+	position: relative;
+/*	L.text의 위치 기준 값*/
+	overflow: hidden;
+/*	L.bg가 호버했을 때 커지면서 초과하는 영역을 잘라서 보이지 않도록 처리하기 위함!*/	
+}
+
+.bg{
+	background: url(main2.jpg) center fixed;
+	width: 100%;
+	height: 600px;
+/*	height: 600px;*/
+	transition: 0.5s;
+}
+.text{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0%;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	padding: 4rem 2rem;
+	padding-right: 3rem;
+	transition: 0.5s;
+	padding-top: 13rem;
+	
+	
+/*
+	부모태그 기준 자식태그를 정중앙으로 배치하는 공식 (position이 있다는 전제하에)
+	1. top/left : 50%;
+	2. transform: translate(-50%,-50%); << 이게 포인트
+*/
+/*
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+		
+*/
+	
+}
+
+
+.text h2{
+	font-size: 2.5rem;
+	text-align: center;
+	font-weight: normal;
+}
+.text span{
+/*
+	바(bar) 역할로 빈 태그 활용하기
+	1. width / height / background < 크기값이 있어야 한다
+	2. width / boder-top,bottom 
+	2-1. height / border-left, right
+*/
+	display: block;
+	width: 40px;
+	border-bottom: 3px solid;
+	margin: 3rem 0;
+	margin: auto;
+	padding-top: 5rem;
+}
+.text p{
+	font-size: 1.3rem;
+	letter-spacing: -0.5px;
+	line-height: 1.7;
+	text-align: center;
+	padding-top: 5rem;
+}
+.text a{
+	display: inline-block;
+/*	L내용만큼 크기를 차지하기 때문에 가로값을 따로 줄 필요없이 padding으로 박스 크기 조절 가능!*/
+	border: 1px solid;
+	padding: 6px 15px;
+	font-size: 1.1rem;
+	margin-top: 7rem;
+	margin-left: 73rem;
+}
+main:hover .bg{
+	transform: scale(1.1);
+}
+main:hover .text{
+	transform: scale(1.1);
+}
+
+section{
+	padding: 5rem 0;
+	
+}
+section ul{
+	overflow: hidden;
+/*	L li태그의 float에 대한 초기화 값*/
+}
+section ul li{
+	width: 350px;
+	height: 500px;
+	float: left;
+	
+}
+section li+li{
+	margin-left: 25px;
+/*	L.align 1100px - li350px*3 = 50px / 여백이 들어갈 공간 2*/
+}
+section li:first-child{
+/*	height: 525px;*/
+	padding: 0 30px;
+	padding-top: 60px;
+	height: 440px;
+	width: 290px;
+/*	L 원래 가로값 350px - 좌우 여백 30px*2*/
+	background-image: url(first2.gif);
+	background-position: center;
+}
+section li:first-child:hover{
+	background: url(first4.gif) center;
+	
+}
+
+/*--------첫번째 li 하위 항목--------*/
+section li h3{
+	font-size: 1.7rem;
+	color: #fff;
+	padding-top: 20px;
+	
+}
+
+section li>span{
+	display: block;
+	width: 40px;
+	border-bottom: 3px solid;
+	margin: 3rem 0;
+	color: #fff;
+	
+	
+}
+section li p{
+	font-size: 1.2rem;
+	letter-spacing: -1px;
+	line-height: 1.6;
+	color: #fff;
+	padding-top: 10rem;
+}
+/*--------두세번째 li 하위 항목-------*/
+section li a{
+	display: block;
+}
+section li a span{
+	display: block;
+}
+section li a .simg{
+	overflow: hidden;
+/*	L 호버했을 때 img 태그가 커지면서 부모태그를 초과하는데, 그 영역을 보이지 않도록 처리하기 위함*/
+	height: 400px;
+}
+.simg img{
+	width: 100%;
+	transition: 0.3s;
+}
+section li a .stext{
+	background: #eeeeee;
+	padding: 20px;
+	border-bottom: 5px solid;
+	transition: 0.3;
+}
+.stext .stitle{
+	font-size: 1.2rem;
+	
+	
+}
+.stext .price{
+	font-size: 2rem;
+	font-weight: bold;
+	
+}
+.stext .scon{
+	overflow: hidden;
+	
+}
+.stext .scon .btn{
+	background: url(btn_link.png);
+	width: 20px;
+	height: 20px;
+	background-size: 40px;
+	float: left;
+  margin-right: 1rem;
+	transition: 0.3s;
+	
+	
+}
+.stext .scon .why{
+	float: left;
+	font-size: 1.2rem;
+	
+}
+
+
+section li:hover img{
+	transform: scale(1.1);
+}
+section li:hover .scon .btn{
+	background-position: right;
+}
+section li:hover .stext{
+	border-bottom-color: #990b1b;
+	
+}
+
+footer{
+/*	border-top: 1px solid #ccc;*/
+/*	box-shadow: 가로 세로 퍼짐 색상;*/
+	box-shadow: 0 0 10px #ccc;
+	padding: 3rem 0;
+	text-align: center;
+}
+
+footer ul{
+	overflow: hidden;
+	width: 504px;
+	margin: auto;
+	
+}
+footer ul li{
+	float: left;
+	
+}
+footer li+li{
+	margin-left: 1.5rem;
+	
+}
+footer ul a{
+	display: block;
+	font-size: 1.1rem;
+	
+}
+
+
+footer address{
+	font-size: 0.9rem;
+	color: #999;
+	margin-top: 1rem;
+	
+}
